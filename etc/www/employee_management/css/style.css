@@ -1,0 +1,161 @@
+#body
+{
+	margin: 0px
+}
+
+#wrapper
+{
+	float: left;
+	height: 1330px;
+	width : 1280px;
+	background-color: silver;
+	border: 1px solid #cccccc;
+	min-height: 600px;
+	margin: 0px auto;
+}
+
+
+#header
+{
+	float: left;
+	height: 130px;
+	width : 1280px;
+	background-color: silver;
+	
+}
+
+#logo
+{
+	width: 150px; 
+	height: 130px;
+	background-color: white; 
+	float: left;
+	
+}
+#banner
+{
+	width: 930px; 
+	height: 130px; 
+	background-color: orange; 
+	float: left;
+	
+}
+
+
+#banner1
+{
+	width: 130px; 
+	height: 130px; 
+	background-color: orange; 
+	float: left;
+	
+}
+
+#banner2
+{
+	width: 780px; 
+	height: 130px; 
+	background-color: green; 
+	float: left;
+	
+}
+
+
+#login
+{
+	width: 220px; 
+	height: 130px; 
+	background-color: red;
+	float: right;
+}
+
+#signup
+{
+	width: 200px;
+	height: 20px;
+	float: right;
+	/*background-color: red; */
+	text-align: center 
+
+}
+
+#leftcontent
+{
+	width: 150px; 
+	height: 1170px; 
+	background-color: yellow; 
+	float: left;
+	text-align: center;
+	
+	
+}
+
+#leftcontentdisplay
+{
+	width: 150px;
+	height: 50px;
+	background-color: gray;
+	float: left;
+	
+}
+
+#leftcontentadd
+{
+	width: 150px;
+	height: 50px;
+	background-color: red;
+	float: left;
+}
+
+
+#leftcontentremove
+{
+	width: 150px;
+	height: 50px;
+	background-color: gray;
+	float: left;
+	
+}
+
+
+#maincontent
+{
+	width: 928px; 
+	height: 1170px; 
+	background-color: silver; 
+	float: left;
+	padding-left: 1px;
+	text-align: center;
+}
+
+
+#rightcontent
+{
+	width: 200px; 
+	height: 1170px; 
+	background-color: yellow; 
+	float: right;
+}
+	
+#footer 
+
+{
+	clear: left;
+	height: 15px;
+	width : 1280px;
+	background-color: green;
+	text-align: center;
+}
+
+#backgroundlogin
+
+{
+	background-image:url(../image/backgroundlogin.jpg);
+	height: 130px; 
+	width: 200px;
+	float: right;
+	
+
+}
+
+

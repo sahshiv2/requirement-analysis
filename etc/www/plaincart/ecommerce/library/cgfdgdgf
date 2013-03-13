@@ -1,0 +1,54 @@
+<?php
+function order()
+{
+	$orderid = 0;
+	$requiredField = array('hidShippingFirstName', 'hidShippingLastName', 'hidShippingAddress', 'hidShippingCity', 'hidShippingPostalCode',
+						   'hidPaymentFirstName', 'hidPaymentLastName', 'hidPaymentAddress', 'hidPaymentCity', 'hidPaymentPostalCode');
+	extract($_POST);
+		
+	$hidShippingFirstName = ucwords($hidShippingFirstName);
+	$hidShippingLastName = ucwords($hidShippingLastName);
+	$hidPaymentFirstName = ucwords($hidPaymentFirstName);
+	$hidPaymentLastName = ucwords($hidPaymentLastName);
+	$hidShippingAddress = ucwords($hidShippingAddress);
+	$hidPaymentAddress = ucwords($hidPaymentAddress);
+	$hidShippingCity = ucwords($hidShippingCity);
+	$hidPaymentCity       = ucwords($hidPaymentCity);
+	
+	$order = "INSERT INTO orderdetail(date, sfname, slname, saddress, sphone, scity, scode, pfname, plname, paddress, pphone, pcity, pcode) VALUES 
+           (NOW(), '$hidShippingFirstName', '$hidShippingLastName', '$hidShippingAddress', '$hidShippingPhone', '$hidShippingCity', '$hidShippingPostalCode', 
+			'$hidPaymentFirstName', '$hidPaymentLastName', '$hidPaymentAddress', '$hidPaymentPhone',  '$hidPaymentCity', '$hidPaymentPostalCode')";
+	$orderentry=mysql_query($order);
+	$orderid = mysql_insert_id();
+	function cartcontent()
+	{
+		$cartcontent = array();
+		$sid = session_id();
+		$sql = "SELECT * FROM cart WHERE ctid='$sid'";
+		$result = mysql_query($sql);
+		while ($row = mysql_fetch_assoc($result))
+		{			
+			$cartcontent[] = $row;
+		}
+		return $cartcontent;
+	}
+	$cartcontent = cartcontent();
+	$numitem = count($cartcontent);
+	if ($orderid)
+	{
+		for ($i = 0; $i < $numitem; $i++) 
+		{
+			$insert = mysql_query("INSERT INTO orders (oid, pid, quantity, paymethod) VALUES 
+					($orderid, {$cartcontent[$i]['pid']}, {$cartcontent[$i]['quantity']}, '$hidPaymentMethod')");		
+			$result = mysql_query($insert);					
+		}
+		for ($i = 0; $i < $numitem; $i++) 
+		{
+			$sql = "DELETE FROM cart
+					WHERE ctid = {$cartcontent[$i]['ctid']}";
+			$result = mysql_query($sql) or die(mysql_error());				
+		}	
+	}
+	return $orderid;
+}
+?>

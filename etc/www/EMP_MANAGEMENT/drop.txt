@@ -1,0 +1,183 @@
+drop down menu populated frm mysql
+
+
+<?php
+
+function dropdown($intIdField, $strNameField, $strTableName, $strOrderField, $strNameOrdinal, $strMethod="asc") {
+
+   //
+   // PHP DYNAMIC DROP-DOWN BOX - HTML SELECT
+   //
+   // 2006-05, 2008-09, 2009-04 http://kimbriggs.com/computers/
+   //
+   // Function creates a drop-down box
+   // by dynamically querying ID-Name pair from a lookup table.
+   //
+   // Parameters:
+   // intIdField = Integer "ID" field of table, usually the primary key.
+   // strMethod = Sort as asc=ascending (default) or desc for descending.
+   // strNameField = Name field that user picks as a value.
+   // strNameOrdinal = For multiple drop-downs to same table on same page (Ex: strNameField.$i)
+   // strOrderField = Which field you want results sorted by.
+   // strTableName = Name of MySQL table containing intIDField and strNameField.
+   //
+   // Returns:
+   // HTML Drop-Down Box Mark-up Code
+   //
+
+   echo "<select name=\"$strNameOrdinal\">\n";
+   echo "<option value=\"NULL\">Select Value</option>\n";
+
+   $strQuery = "select $intIdField, $strNameField
+               from $strTableName
+               order by $strOrderField $strMethod";
+
+   $rsrcResult = mysql_query($strQuery);
+
+   while($arrayRow = mysql_fetch_assoc($rsrcResult)) {
+      $strA = $arrayRow["$intIdField"];
+      $strB = $arrayRow["$strNameField"];
+      echo "<option value=\"$strA\">$strB</option>\n";
+   }
+
+   echo "</select>";
+}
+
+?> 
+
+
+
+
+
+drop down populated by mysql
+
+
+<?
+...
+mysql cnx code
+...
+
+$sql="SELECT id, thing FROM table";
+$result=mysql_query($sql);
+
+$options="";
+
+while ($row=mysql_fetch_array($result)) {
+
+    $id=$row["id"];
+    $thing=$row["thing"];
+    $options.="<OPTION VALUE=\"$id\">".$thing;
+}
+?>
+...
+html code
+...
+
+<SELECT NAME=thing>
+<OPTION VALUE=0>Choose
+<?=$options?>
+</SELECT>
+...
+
+
+
+
+<?php
+// Connect database
+
+// If submitted, check the value of "select". If its not blank value, get the value and put it into $select.
+if(isset($select)&&$select!="")
+{
+$select = $_GET['select'];
+}
+echo <<<_HTML
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+</head>
+<body>
+<form id="form1" name="form1" method="post" action=" ">
+Select User :
+<select name="select">
+<option value="">--- Select ---</option>
+_HTML;
+
+// Get records from database (table "name_list").
+$list = mysql_query("SELECT * FROM my_table ORDER BY id ASC");
+
+// Show records by while loop.
+while($row_list=mysql_fetch_assoc($list)){
+$id =  $row_list['id'];
+$name = $row_list['name'];
+$email = $row_list['email'];
+
+echo <<<_HTML
+<option value="$id"
+_HTML;
+
+ if($id == $select){
+echo "selected";
+} 
+
+echo <<<_HTML
+$'name | $email</option>
+_HTML;
+
+// End while loop.
+}
+echo <<<_HTML
+</select>
+<input type="submit" name="Submit" value="Select" />
+</form>
+<hr>
+<p>
+
+</body>
+</html>
+
+
+
+
+DropDownListIndataAccess.aspx
+
+<%@ Page Language="C#" AutoEventWireup="true"  CodeFile="Default.aspx.cs" Inherits="_Default" Debug="true" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" >
+
+<head runat="server">
+
+    <title>DropDownListIn Data accessing</title>
+
+</head>
+
+<body>
+
+    <form id="form1" runat="server">
+
+    <div>
+
+        <table cellpadding="0" cellspacing="0" border="4" width="50%" align="center">
+
+          <tr><td>
+
+            <asp:DropDownList ID="DroplistData" runat="server" Width="200px" >
+
+            </asp:DropDownList>
+
+          </td></tr>
+
+         
+
+          <tr><td><table>
+
+          <tr><td>&nbsp;</td></tr>
+
+          <tr><td>  
+
+            <asp:Button ID="ShowDataGrid" runat="server" Text="Click Here To Show The Full record of Selected Name " OnClick="GridShow_Click" />
+
+          </td></tr>
+
+          </table></td></tr>

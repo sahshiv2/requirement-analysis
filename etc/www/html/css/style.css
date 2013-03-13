@@ -1,0 +1,143 @@
+.error
+{
+	font-family:calibri;
+	color:blue;
+	font-size:12;
+	font-weight:BOLD;
+}
+body
+{
+	margin:0px;
+}
+
+.wrapper{
+	background: #c1c1c1;
+	width: 1250px;
+	border: 1px solid #cccccc;
+	height: 900px;
+	margin: 0px auto;
+}
+
+.header 
+{ 
+	
+	height: 150px;
+	width: 1250px;
+	background: #00ff00;
+	color: red;
+	font-family: Verdana, Arial, Helvetica;
+}
+.footer
+{
+	height:25px;
+	width:1250px;
+	background-color:#0f0f0f;
+	color:red;
+	text-align:center;
+}
+.logo
+{
+	float:left;
+	height:150px;
+	width: 300px;
+	background-color: black;
+	font-family:calibri;
+}
+.banner
+{
+	width: 650px;
+	float: left;
+	height: 150px;	
+	background-image:url(../images/sunrise.jpg);
+}
+
+.leftcontent
+{	
+	
+	float: left; 
+	height: 730px;
+	width:280px;
+	padding:10px;
+	background: #800080;
+	color: #330033;
+	font-family: calibri;
+	font-weight:bold;
+}
+
+.rightcontent
+{
+	float: left; 
+	height: 750px;
+	width: 650px;
+	background: #00FFFF;
+	color: #035A85;
+	font-family: Verdana, Arial, Helvetica;		
+}
+
+.right
+{
+	float: right; 
+	height: 750px;
+	width:300px;
+	background: #800080;
+	color: #035A85;
+	font-family: Verdana, Arial, Helvetica;		
+}
+.rightmenu
+{
+	width:300px;
+	height:150px;
+	float:right;
+	background: white;
+	text-align:center;
+	font-family:times new roman;
+	font-size:20px;
+	
+}
+a.link_td {
+background-color: #0000ff;
+color: #ff0000;
+
+width: 100%;
+}
+a.link_td:hover {
+background-color: #ff0000;
+color: #0000ff;
+}
+.rightmenu1
+{
+	width:300px;
+	height:150px;
+	float:right;
+	background: white;
+	text-align:center;
+	font-family:times new roman;
+	font-size:20px;
+	background-image:url(../images/himal.jpg);
+}
+.bannerup
+{
+	width: 650px;
+	float: left;
+	height: 125px;	
+	
+}
+.bannerdown
+{
+	width: 650px;
+	float:left;
+	
+	height: 25px;	
+}
+#img_container
+ {
+     position:absolute;
+     display:none;
+     border:1px solid #f00;
+     background:#fff;
+}
+#large_img
+{
+     width:304px;
+     height:400px;
+}

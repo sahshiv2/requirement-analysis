@@ -1,0 +1,95 @@
+
+
+.wrapper{
+	background-color:black;
+	height:950px;
+	width: 1000px;
+	border: 1px solid #cccccc;
+	
+	margin: 0px auto;
+}
+
+.header 
+{ 
+	
+	height: 150px;
+	width: 1000px;
+	background: #00ff00;
+	color: red;
+	font-family: Verdana, Arial, Helvetica;
+}
+.logo
+{
+	float:left;
+	height:150px;
+	width: 150px;
+	background-color: black;
+	font-family:calibri;
+}
+.banner
+{
+	width: 820px;
+	float: right;
+	height: 150px;
+	background-color:#FFFFFF;
+	
+	
+}
+.bannerup
+{
+	width: 820px;
+	float: left;
+	height: 120px;
+	background-color:orange;
+	
+}
+.bannerdown
+{
+	width: 820px;
+	float:left;
+	height: 30px;
+	border:1px auto;
+	background-color:crimson;
+	
+}
+.footer
+{
+	float:left;
+	height:50px;
+	width:1000px;
+	background-color:white;
+	color: #000000;
+	text-align:center;
+}
+
+.footer1
+{
+	float:left;
+	height:50px;
+	width:1000px;
+	background-color:blue;
+	color: #000000;
+	text-align:center;
+}
+.rightcontent
+{
+	float: right; 
+	height: 750px;
+	width: 1000px;
+	background:green;
+	color: green;
+	
+	font-family: Verdana, Arial, Helvetica;		
+}
+
+#button
+{
+	width: 100px;
+	height: 30px;
+	font-family: Calibri;
+	text-align: center;
+	background-image: url(images/b3.jpg);
+	float: right;
+	font-weight: bold;
+	
+}

@@ -1,0 +1,105 @@
+<html>
+	<head>
+		<title> Testing HTML Class Tests </title>
+		<link rel="stylesheet" media="screen" href="css/style.css">
+		<script type="text/javascript" src="js/script.js"></script>
+	</head>
+	<body>
+		<div class="wrapper">
+			<div class="header">
+				<div class="logo">
+					<img src="images/nepal.jpeg" height="150px" width="300px">
+			
+				</div>
+				<div class="banner">	
+					<h1>WELCOME TO MERO NEPAL</h1>
+					
+					
+					
+				</div>
+				<div class="rightmenu">
+					<blink>sign in</blink>
+					<form name="login" id="login" method="post" action="test.html" onsubmit="return loginvalidate()">
+						Username:<input name="username" id="username" value="USERNAME" type="text" onclick="emptyusername()">
+						<div id="username-error" class="error"></div>
+						<br>
+						Password:<input name="pwd" id="pwd" type="password" Value="PASSWORD" onclick="emptypassword()">
+						<div id="pwd-error" class="error"></div>
+					
+						<input type="submit" id="sub" value="login">
+					
+					</form>
+				</div>
+			</div>
+			<div class="leftcontent">
+				<p>Fill up the form</P>
+				<form name="form1" id="form1" method="post" action="jstest.html"  onsubmit="return validateForm()">
+						Firstname:<input name="fname" id="uname" value="Enter Firstname" type="text" onBlur="getfname()" onfocus="clearfname()">
+						<div id="firstname-error" class="error"></div>
+						<br>
+						
+						Lastname:<input type="text" value="Enter Lastname" name="lname" onBlur="getlname()" onfocus="clearlname();">
+						<div id="lastname-error" class="error"></div>
+						<br>
+						Email:<input type="email" name="email" value="Email" onclick="makeEmailEmpty();">
+						<div id="email-error" class="error"></div>
+						<br>
+						Password:<input name="password" id="password" type="password" Value="" onclick="makePasswordEmpty();">
+						<div id="password-error" class="error"></div>
+						<br>
+						<input name="radiobutton" type="radio" value="radio">male
+						<br>
+						
+						<input name="radiobutton" type="radio" value="radio">female
+						<br></br>
+						DOB
+						<select>
+							<option value=""> month</option>
+							<option value=""> January</option>
+							<option value=""> February</option>
+							<option value=""> March</option>
+							<option value=""> April</option>
+							<option value="">May</option>
+							<option value=""> June</option>
+							<option value=""> July</option>
+							<option value=""> August</option>
+							<option value=""> September</option>
+							<option value=""> October</option>
+							<option value=""> November</option>
+							<option value=""> December</option>
+							
+						</select>
+						<select>
+							<option value=""> day</option>
+							
+						</select>
+						<select>
+							<option value=""> year</option>
+							
+						</select>
+						
+						
+						<p id="demo"></p>
+						<button type="button" id="button" onclick="displayDate();">Display Date</button>
+						<br></br>
+						
+						
+						 <input type="submit" id="submit" value="Submit">
+						 <input type="reset" value="clear">
+					 </form>
+			</div>
+			
+			<div class="rightcontent">	
+			<img src="images/kagbeni1.jpg">
+			</div>
+			<div class="right">
+				
+			</div>
+			
+			<div class="footer">
+				copyright content goes here..........
+			</div>
+			
+		</div>
+	<body>	
+</html>

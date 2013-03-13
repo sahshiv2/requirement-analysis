@@ -1,0 +1,17 @@
+.wrapper
+{
+	background-color:#FFFFFF;
+	width: 1150px;
+	border: 0px solid #cccccc;
+	height: 800px;
+	margin: 0px auto;
+}
+.footer
+{
+	float:left;
+	height:60px;
+	width:1000px;
+	background-color:#FFFFFF;
+	color: #000000;
+	text-align:center;
+}
